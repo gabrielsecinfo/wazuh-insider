@@ -87,9 +87,14 @@ O Sysmon está configurado para capturar atividades maliciosas. Veja o arquivo d
 
 
 🔍 Detecção Avançada com YARA
-Detecta demostra malwares utilizando recursos, a mesma é uma ferramenta de código aberto que identifica artefatos de malwares detectando artefatos em binarios. em comparativo com o VirusTotal o yara é a versão  100% gratuita, ou seja, o mesmo é detecção de malware ele é do virustotal porém seria a versão gratuita, ele funciona basicamente a mesma coisa há uma lista de keys que a comunidade fornece
+O YARA é uma ferramenta essencial para análise de ameaças, permitindo a criação de regras customizadas para detecção de malware fileless, scripts maliciosos e ataques sofisticados. Diferente do VirusTotal, o YARA é 100% gratuito, funcionando de maneira similar, mas permitindo a análise offline.
 
-<img src="wazuh-imgs/wazuh-yara-events-flow1.png"> 
+📌 Processo do YARA:
+<img src="wazuh-imgs/wazuh-yara-events-flow1.png" alt="Fluxo de detecção com YARA" style="max-width: 100%;">
+
+
+
+Instalação de Malware para Validar o Monitoramento do YARA: 
 
 
 Agora instalação de malware para validar o monitoramento do YARA.
@@ -105,8 +110,7 @@ Agora instalação de malware para validar o monitoramento do YARA.
 
 ```
 
-<img src="wazuh-imgs/eicar02.png"> 
-
+<img src="wazuh-imgs/eicar01.png" alt="Detecção de Malware com YARA" style="max-width: 100%;">
 
 <img src="wazuh-imgs/eicar02.png"> 
 
