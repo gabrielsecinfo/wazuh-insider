@@ -15,8 +15,6 @@ O InsiderShield é um projeto de Threat Hunting focado na detecção e resposta 
  ┃ ┣ 📜 local_rules.xml          # Regras customizadas para insider threats
  ┃ ┣ 📜 sysmonconfig-export.xml  # Configuração detalhada do Sysmon
  ┃ ┣ 📜 yara-rules.yar           # Regras YARA para detectar malware fileless
- ┣ 📂 dashboards
- ┃ ┣ 📜 kibana-dashboard.ndjson # Dashboard pronto para importação
  ┣ 📂 scripts
  ┃ ┣ 📜 auto-isolate.ps1      # Script para isolar máquina comprometida
  ┃ ┣ 📜 yara-scan.ps1          # Rodar YARA na memória RAM
