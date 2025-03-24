@@ -1,9 +1,12 @@
 🛡️ InsiderShield: Threat Hunting & Resposta a Ameaças Internas com Wazuh
+
 🚀 Monitoramento Avançado para Segurança Corporativa
+
 🔍 Detecção de ameaças internas, movimentação lateral e abuso de privilégios em tempo real.
 
 📌 Visão Geral
-O InsiderShield é um projeto de Threat Hunting focado na detecção e resposta a ameaças internas dentro de um ambiente corporativo. Ele utiliza o Wazuh como SIEM, integrado a Sysmon, YARA e Sigma, para fornecer uma análise detalhada dos eventos do sistema e detectar atividades maliciosas como:
+
+O InsiderShield é um projeto de Threat Hunting focado na detecção e resposta a ameaças internas dentro de um ambiente corporativo. Ele utiliza o Wazuh como SIEM, integrado a Sysmon e YARA, para fornecer uma análise detalhada dos eventos do sistema e detectar atividades maliciosas como:
 
 
 ```bash
@@ -20,10 +23,12 @@ O InsiderShield é um projeto de Threat Hunting focado na detecção e resposta 
 ```
 
 🛠️ Ferramentas Utilizadas
-Ferramenta	Função
 🔹 Wazuh	SIEM para monitoramento e resposta a incidentes
+
 🔹 Sysmon	Coleta e análise detalhada de eventos no Windows
+
 🔹 YARA	Regras para detecção de malware
+
 🔹 ELK Stack (Kibana)	Visualização e análise dos alertas
 
 
@@ -31,7 +36,9 @@ Este projeto combina técnicas avançadas de detecção, correlação de eventos
 
 🎯 Objetivos do Projeto
 ✔️ Criar um framework de Threat Hunting para detecção de ameaças internas
+
 ✔️ Implementar regras YARA para identificar malwares em tempo real
+
 ✔️ Automatizar respostas a incidentes, isolando máquinas comprometidas
 
 📊 Monitoramento com Sysmon
@@ -52,9 +59,9 @@ Instalação do malware para dectecção com o sysmon
 
 
 
-(apt_simulator)
- (apt01)
-(apt02)
+<img src="wazuh-imgs/apt.png">
+<img src="wazuh-imgs/apt01.png"> (apt01)
+<img src="wazuh-imgs/apt02.png">(apt02)
 
 
 📌 Exemplo de Detecção:
@@ -82,7 +89,7 @@ O Sysmon está configurado para capturar atividades maliciosas. Veja o arquivo d
 🔍 Detecção Avançada com YARA
 Detecta demostra malwares utilizando recursos, a mesma é uma ferramenta de código aberto que identifica artefatos de malwares detectando artefatos em binarios. em comparativo com o VirusTotal o yara é a versão  100% gratuita, ou seja, o mesmo é detecção de malware ele é do virustotal porém seria a versão gratuita, ele funciona basicamente a mesma coisa há uma lista de keys que a comunidade fornece
 
-(wazuh-yara-events-flow1)
+<img src="wazuh-imgs/wazuh-yara-events-flow1.png"> 
 
 
 Agora instalação de malware para validar o monitoramento do YARA.
@@ -98,10 +105,10 @@ Agora instalação de malware para validar o monitoramento do YARA.
 
 ```
 
-eicar01)
+<img src="wazuh-imgs/eicar02.png"> 
 
 
-(eicar02)
+<img src="wazuh-imgs/eicar02.png"> 
 
 
 
