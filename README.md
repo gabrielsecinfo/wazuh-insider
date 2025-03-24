@@ -21,15 +21,15 @@ O InsiderShield é um projeto de Threat Hunting focado na detecção e resposta 
  ┃ ┣ 📜 auto-isolate.sh        # Script para isolar máquina comprometida
  ┃ ┣ 📜 yara-scan.ps1          # Rodar YARA na memória RAM
 ```
+| Ferramenta        | Função                                          |
+|-------------------|-----------------------------------------------|
+| 🔹 Wazuh         | SIEM para monitoramento e resposta a incidentes  |
+| 🔹 Sysmon        | Coleta e análise detalhada de eventos no Windows |
+| 🔹 YARA          | Regras para detecção de malware                  |
+| 🔹 ELK Stack     | Visualização e análise dos alertas               |
 
-🛠️ Ferramentas Utilizadas
-🔹 Wazuh	SIEM para monitoramento e resposta a incidentes
 
-🔹 Sysmon	Coleta e análise detalhada de eventos no Windows
 
-🔹 YARA	Regras para detecção de malware
-
-🔹 ELK Stack (Kibana)	Visualização e análise dos alertas
 
 
 Este projeto combina técnicas avançadas de detecção, correlação de eventos e automação de respostas para fortalecer a segurança corporativa.
