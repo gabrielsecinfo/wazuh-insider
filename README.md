@@ -82,6 +82,12 @@ O Sysmon está configurado para capturar atividades maliciosas. Veja o arquivo d
 
 
 
+
+
+
+
+
+
 🔍 Detecção Avançada com YARA
 Detecta demostra malwares utilizando recursos, a mesma é uma ferramenta de código aberto que identifica artefatos de malwares detectando artefatos em binarios. em comparativo com o VirusTotal o yara é a versão  100% gratuita, ou seja, o mesmo é detecção de malware ele é do virustotal porém seria a versão gratuita, ele funciona basicamente a mesma coisa há uma lista de keys que a comunidade fornece
 
