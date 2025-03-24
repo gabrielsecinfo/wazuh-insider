@@ -38,6 +38,7 @@ O InsiderShield é um projeto de Threat Hunting focado na detecção e resposta 
 Este projeto combina técnicas avançadas de detecção, correlação de eventos e automação de respostas para fortalecer a segurança corporativa.
 
 🎯 Objetivos do Projeto
+
 ✔️ Criar um framework de Threat Hunting para detecção de ameaças internas
 
 ✔️ Implementar regras YARA para identificar malwares em tempo real
@@ -61,15 +62,7 @@ Instalação do malware para dectecção com o sysmon
 ```
 
 
-
-<img src="wazuh-imgs/apt.png">
-<img src="wazuh-imgs/apt01.png"> (apt01)
-<img src="wazuh-imgs/apt02.png">(apt02)
-
-
 📌 Exemplo de Detecção:
-
-📌 Exemplo de Log Exportado:
 
 ```bash
 { 
