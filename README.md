@@ -11,16 +11,15 @@ O InsiderShield é um projeto de Threat Hunting focado na detecção e resposta 
 
 ```bash
 📦 InsiderShield
-InsiderShield/
-├── configs/
-│ ├── local_rules.xml # Regras personalizadas para ameaças internas
-│ └── yara-rules.yar # Regras YARA para detectar malware fileless
-├── scripts/
-│ ├── auto-isolate.ps1 # Script para isolar máquinas comprometidas
-│ └── yara-scan.ps1 # Script para rodar YARA na memória RAM
-├── imgs/
-│ └── (imagens ilustrativas)
-└── README.md # Documentação do projeto
+## 📦 Arquivos do Projeto
+
+| Arquivo               | Tipo            | Descrição                                                                                          |
+|-----------------------|-----------------|--------------------------------------------------------------------------------------------------|
+| 🛡️ `auto-isolate.ps1` | Script PowerShell| Script para isolar automaticamente máquinas comprometidas, ativando resposta rápida.             |
+| 📘 `local_rules.xml`   | Configuração    | Regras personalizadas do Wazuh focadas na detecção de ameaças internas e atividades suspeitas.   |
+| 🖥️ `yara.bat`          | Script Batch    | Script para executar as regras YARA no ambiente de monitoramento local.                          |
+| 🔍 `yara-rules.yar`    | Regras YARA     | Regras avançadas para identificar malwares fileless, scripts maliciosos e ataques sofisticados. |
+
 ```
 
 
