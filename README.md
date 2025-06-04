@@ -6,18 +6,21 @@
 
 📌 Visão Geral
 
-O InsiderShield é um projeto de Threat Hunting focado na detecção e resposta a ameaças internas dentro de um ambiente corporativo. Ele utiliza o Wazuh como SIEM, integrado a Sysmon e YARA, para fornecer uma análise detalhada dos eventos do sistema e detectar atividades maliciosas como:
+O InsiderShield é um projeto de Threat Hunting focado na detecção e resposta a ameaças internas dentro de um ambiente corporativo. Ele utiliza o Wazuh como SIEM, integrado a Sysmon e YARA, para fornecer uma análise detalhada dos eventos do sistema e detectar atividades maliciosa.
 
 
 ```bash
 📦 InsiderShield
- ┣ 📂 configs
- ┃ ┣ 📜 local_rules.xml          # Regras customizadas para insider threats
- ┃ ┣ 📜 sysmonconfig-export.xml  # Configuração detalhada do Sysmon
- ┃ ┣ 📜 yara-rules.yar           # Regras YARA para detectar malware fileless
- ┣ 📂 scripts
- ┃ ┣ 📜 auto-isolate.ps1      # Script para isolar máquina comprometida
- ┃ ┣ 📜 yara-scan.ps1          # Rodar YARA na memória RAM
+InsiderShield/
+├── configs/
+│ ├── local_rules.xml # Regras personalizadas para ameaças internas
+│ └── yara-rules.yar # Regras YARA para detectar malware fileless
+├── scripts/
+│ ├── auto-isolate.ps1 # Script para isolar máquinas comprometidas
+│ └── yara-scan.ps1 # Script para rodar YARA na memória RAM
+├── imgs/
+│ └── (imagens ilustrativas)
+└── README.md # Documentação do projeto
 ```
 
 
@@ -35,78 +38,64 @@ O InsiderShield é um projeto de Threat Hunting focado na detecção e resposta 
 
 Este projeto combina técnicas avançadas de detecção, correlação de eventos e automação de respostas para fortalecer a segurança corporativa.
 
-🎯 Objetivos do Projeto
+## 🎯 Objetivos do Projeto
 
-✔️ Criar um framework de Threat Hunting para detecção de ameaças internas
-
-✔️ Implementar regras YARA para identificar malwares em tempo real
-
-✔️ Automatizar respostas a incidentes, isolando máquinas comprometidas
+- Criar um framework de Threat Hunting para identificar ameaças internas  
+- Implementar regras YARA para detecção em tempo real de malwares fileless  
+- Automatizar respostas a incidentes isolando máquinas comprometidas  
 
 📊 Monitoramento com Sysmon
-O Sysmon permite capturar atividades detalhadas do sistema.
+O Sysmon captura atividades detalhadas do sistema, permitindo a identificação de comportamentos suspeitos.
 
 Instalação do malware para dectecção com o sysmon
 
-```bash
-> cd C:\Users\Administrator\Downloads
+### Exemplo: Instalação do malware para teste de detecção
 
-> Invoke-WebRequest -Uri https://github.com/NextronSystems/APTSimulator/archive/refs/heads/master.zip -OutFile APTSimulator.zip
+```powershell
+cd C:\Users\Administrator\Downloads
 
->cd .\APTSimulator\APTSimulator-master\
+Invoke-WebRequest -Uri https://github.com/NextronSystems/APTSimulator/archive/refs/heads/master.zip -OutFile APTSimulator.zip
 
-> .\APTSimulator.bat
+cd .\APTSimulator\APTSimulator-master\
 
+.\APTSimulator.bat
 ```
 
 
-📌 Exemplo de Detecção:
+📌 Exemplo de evento detectado pelo Sysmon:
 
 ```bash
 { 
   "event_id": "1", 
   "image": "C:\\Windows\\System32\\PING.EXE", 
-  "command_line": C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Users\\Administrator\\Downloads\\APTSimulator\\APTSimulator-master\\APTSimulator.bat\"\", 
-  "user": "Administrator" 
-  rule.mitre.id:T1087 T1059.003
+  "command_line": "C:\\Windows\\system32\\cmd.exe /c \"C:\\Users\\Administrator\\Downloads\\APTSimulator\\APTSimulator-master\\APTSimulator.bat\"", 
+  "user": "Administrator",
+  "rule.mitre.id": ["T1087", "T1059.003"]
 }
 
 ```
 
 
-📌 Arquivo de Configuração:
-O Sysmon está configurado para capturar atividades maliciosas. Veja o arquivo de configuração completo aqui.
-
-
-
-
-
-
-
-
-
-
 🔍 Detecção Avançada com YARA
-O YARA é uma ferramenta essencial para análise de ameaças, permitindo a criação de regras customizadas para detecção de malware fileless, scripts maliciosos e ataques sofisticados. Diferente do VirusTotal, o YARA é 100% gratuito, funcionando de maneira similar, mas permitindo a análise offline.
+YARA é uma ferramenta essencial para análise de ameaças, permitindo a criação de regras personalizadas para detectar malwares fileless e scripts maliciosos, funcionando de forma offline e gratuita.
 
-📌 Processo do YARA:
+
+📌 Fluxo de detecção com YARA:
 <img src="wazuh-imgs/wazuh-yara-events-flow1.png" alt="Fluxo de detecção com YARA" style="max-width: 100%;">
 
 
 
-Instalação de Malware para Validar o Monitoramento do YARA: 
+Teste de detecção com YARA - Malware EICAR
 
-
-Agora instalação de malware para validar o monitoramento do YARA.
 
 ```bash
- cd ~
+cd ~
 
-> Invoke-WebRequest -Uri https://secure.eicar.org/eicar_com.zip -OutFile eicar.zip
+Invoke-WebRequest -Uri https://secure.eicar.org/eicar_com.zip -OutFile eicar.zip
 
-> Expand-Archive .\eicar.zip
+Expand-Archive .\eicar.zip
 
-> cp .\eicar\eicar.com C:\Users\Administrator\Downloads
+Copy-Item .\eicar\eicar.com C:\Users\Administrator\Downloads
 
 ```
 
@@ -114,6 +103,9 @@ Agora instalação de malware para validar o monitoramento do YARA.
 
 <img src="wazuh-imgs/eicar02.png"> 
 
+
+📝 Observações
+Este projeto integra técnicas avançadas de detecção, correlação de eventos e automação para fortalecer a segurança contra ameaças internas em ambientes Windows.
 
 
 
